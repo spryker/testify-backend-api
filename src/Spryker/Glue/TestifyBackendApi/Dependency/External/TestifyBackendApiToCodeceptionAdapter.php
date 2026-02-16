@@ -37,7 +37,7 @@ class TestifyBackendApiToCodeceptionAdapter implements TestifyBackendApiToCodece
     /**
      * @param array<string, mixed> $settings
      *
-     * @return list<string>
+     * @return array<string>
      */
     public function modules(array $settings): array
     {
