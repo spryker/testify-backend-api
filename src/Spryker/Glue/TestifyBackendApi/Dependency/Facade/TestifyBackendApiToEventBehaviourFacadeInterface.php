@@ -9,8 +9,5 @@ namespace Spryker\Glue\TestifyBackendApi\Dependency\Facade;
 
 interface TestifyBackendApiToEventBehaviourFacadeInterface
 {
-    /**
-     * @return void
-     */
     public function triggerRuntimeEvents(): void;
 }

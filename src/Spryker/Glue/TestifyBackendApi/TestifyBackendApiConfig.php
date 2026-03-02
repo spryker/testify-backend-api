@@ -87,9 +87,6 @@ class TestifyBackendApiConfig extends AbstractBundleConfig
         throw new CodeceptionConfigurationNotFoundException('Codeception suite name not found');
     }
 
-    /**
-     * @return string
-     */
     protected function getModuleRoot(): string
     {
         $moduleRoot = dirname(__DIR__, 4);

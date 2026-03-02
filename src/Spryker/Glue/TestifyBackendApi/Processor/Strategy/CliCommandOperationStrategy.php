@@ -35,9 +35,6 @@ class CliCommandOperationStrategy implements OperationStrategyInterface
      */
     protected const CODE_ERROR = 1;
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return TestifyBackendApiConfig::OPERATION_TYPE_CLI_COMMAND;

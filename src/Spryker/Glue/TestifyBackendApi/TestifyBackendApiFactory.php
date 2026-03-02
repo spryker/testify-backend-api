@@ -37,9 +37,6 @@ use Spryker\Glue\TestifyBackendApi\Processor\Synchronizer\OperationSynchronizerI
  */
 class TestifyBackendApiFactory extends AbstractBackendApiFactory
 {
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Processor\Generator\DynamicFixtureGeneratorInterface
-     */
     public function createDynamicFixtureGenerator(): DynamicFixtureGeneratorInterface
     {
         return new DynamicFixtureGenerator(
@@ -50,9 +47,6 @@ class TestifyBackendApiFactory extends AbstractBackendApiFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Processor\Runner\OperationPostRunnerInterface
-     */
     public function createOperationPostRunner(): OperationPostRunnerInterface
     {
         return new OperationPostRunner(
@@ -60,9 +54,6 @@ class TestifyBackendApiFactory extends AbstractBackendApiFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Processor\Synchronizer\OperationSynchronizerInterface
-     */
     public function createOperationSynchronizer(): OperationSynchronizerInterface
     {
         return new OperationSynchronizer(
@@ -71,25 +62,16 @@ class TestifyBackendApiFactory extends AbstractBackendApiFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Processor\ResponseBuilder\DynamicFixtureResponseBuilderInterface
-     */
     public function createDynamicFixtureResponseBuilder(): DynamicFixtureResponseBuilderInterface
     {
         return new DynamicFixtureResponseBuilder();
     }
 
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Processor\Resolver\OperationArgumentsCacheResolverInterface
-     */
     public function createOperationArgumentsCacheResolver(): OperationArgumentsCacheResolverInterface
     {
         return new OperationArgumentsCacheResolver();
     }
 
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Processor\Locator\CodeceptionModuleContainerInterface
-     */
     public function createCodeceptionModuleContainer(): CodeceptionModuleContainerInterface
     {
         return new CodeceptionModuleContainer(
@@ -112,49 +94,31 @@ class TestifyBackendApiFactory extends AbstractBackendApiFactory
         ];
     }
 
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Processor\Strategy\OperationStrategyInterface
-     */
     public function createHelperOperationStrategy(): OperationStrategyInterface
     {
         return new HelperOperationStrategy();
     }
 
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Processor\Strategy\OperationStrategyInterface
-     */
     public function createTransferOperationStrategy(): OperationStrategyInterface
     {
         return new TransferOperationStrategy();
     }
 
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Processor\Strategy\OperationStrategyInterface
-     */
     public function createArrayObjectOperationStrategy(): OperationStrategyInterface
     {
         return new ArrayObjectOperationStrategy();
     }
 
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Processor\Strategy\OperationStrategyInterface
-     */
     public function createBuilderOperationStrategy(): OperationStrategyInterface
     {
         return new BuilderOperationStrategy();
     }
 
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Processor\Strategy\OperationStrategyInterface
-     */
     public function createCliCommandOperationStrategy(): OperationStrategyInterface
     {
         return new CliCommandOperationStrategy();
     }
 
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Processor\Resolver\OperationStrategyResolverInterface
-     */
     public function createOperationStrategyResolver(): OperationStrategyResolverInterface
     {
         return new OperationStrategyResolver(
@@ -163,25 +127,16 @@ class TestifyBackendApiFactory extends AbstractBackendApiFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Dependency\Facade\TestifyBackendApiToEventBehaviourFacadeInterface
-     */
     public function getEventBehaviourFacade(): TestifyBackendApiToEventBehaviourFacadeInterface
     {
         return $this->getProvidedDependency(TestifyBackendApiDependencyProvider::FACADE_EVENT_BEHAVIOR);
     }
 
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Dependency\Facade\TestifyBackendApiToQueueFacadeInterface
-     */
     public function getQueueFacade(): TestifyBackendApiToQueueFacadeInterface
     {
         return $this->getProvidedDependency(TestifyBackendApiDependencyProvider::FACADE_QUEUE);
     }
 
-    /**
-     * @return \Spryker\Glue\TestifyBackendApi\Dependency\External\TestifyBackendApiToCodeceptionAdapterInterface
-     */
     public function getCodeceptionAdapter(): TestifyBackendApiToCodeceptionAdapterInterface
     {
         return $this->getProvidedDependency(TestifyBackendApiDependencyProvider::ADAPTER_CODECEPTION);

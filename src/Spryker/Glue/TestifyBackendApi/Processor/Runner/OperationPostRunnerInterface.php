@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\DynamicFixturesRequestBackendApiAttributesTransfer
 
 interface OperationPostRunnerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\DynamicFixturesRequestBackendApiAttributesTransfer $dynamicFixturesRequestBackendApiAttributesTransfer
-     *
-     * @return void
-     */
     public function executePostOperations(
         DynamicFixturesRequestBackendApiAttributesTransfer $dynamicFixturesRequestBackendApiAttributesTransfer
     ): void;

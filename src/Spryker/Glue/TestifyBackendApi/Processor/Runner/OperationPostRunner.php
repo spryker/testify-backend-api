@@ -17,19 +17,11 @@ class OperationPostRunner implements OperationPostRunnerInterface
      */
     protected OperationSynchronizerInterface $operationSynchronizer;
 
-    /**
-     * @param \Spryker\Glue\TestifyBackendApi\Processor\Synchronizer\OperationSynchronizerInterface $operationSynchronizer
-     */
     public function __construct(OperationSynchronizerInterface $operationSynchronizer)
     {
         $this->operationSynchronizer = $operationSynchronizer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DynamicFixturesRequestBackendApiAttributesTransfer $dynamicFixturesRequestBackendApiAttributesTransfer
-     *
-     * @return void
-     */
     public function executePostOperations(
         DynamicFixturesRequestBackendApiAttributesTransfer $dynamicFixturesRequestBackendApiAttributesTransfer
     ): void {

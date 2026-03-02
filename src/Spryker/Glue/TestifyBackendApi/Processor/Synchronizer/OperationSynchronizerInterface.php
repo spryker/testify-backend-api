@@ -9,8 +9,5 @@ namespace Spryker\Glue\TestifyBackendApi\Processor\Synchronizer;
 
 interface OperationSynchronizerInterface
 {
-    /**
-     * @return void
-     */
     public function synchronize(): void;
 }

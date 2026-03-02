@@ -11,24 +11,15 @@ use Codeception\Test\Test;
 
 class TestStub extends Test
 {
-    /**
-     * @return void
-     */
     public function test(): void
     {
     }
 
-    /**
-     * @return string
-     */
     public function getSignature(): string
     {
         return 'TestStub';
     }
 
-    /**
-     * @return string
-     */
     public function toString(): string
     {
         return 'TestStub';

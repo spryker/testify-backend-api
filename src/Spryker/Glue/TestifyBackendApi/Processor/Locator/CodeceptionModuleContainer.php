@@ -24,10 +24,6 @@ class CodeceptionModuleContainer implements CodeceptionModuleContainerInterface
      */
     protected TestifyBackendApiToCodeceptionAdapterInterface $codeceptionAdapter;
 
-    /**
-     * @param \Spryker\Glue\TestifyBackendApi\TestifyBackendApiConfig $testifyBackendApiConfig
-     * @param \Spryker\Glue\TestifyBackendApi\Dependency\External\TestifyBackendApiToCodeceptionAdapterInterface $codeceptionAdapter
-     */
     public function __construct(
         TestifyBackendApiConfig $testifyBackendApiConfig,
         TestifyBackendApiToCodeceptionAdapterInterface $codeceptionAdapter
@@ -36,9 +32,6 @@ class CodeceptionModuleContainer implements CodeceptionModuleContainerInterface
         $this->codeceptionAdapter = $codeceptionAdapter;
     }
 
-    /**
-     * @return \Codeception\Lib\ModuleContainer
-     */
     public function initModuleContainer(): ModuleContainer
     {
         $codeceptionConfig = $this->codeceptionAdapter->config(

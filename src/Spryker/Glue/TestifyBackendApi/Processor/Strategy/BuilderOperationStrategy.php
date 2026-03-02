@@ -15,9 +15,6 @@ use Spryker\Shared\Kernel\Transfer\AbstractTransfer;
 
 class BuilderOperationStrategy implements OperationStrategyInterface
 {
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return TestifyBackendApiConfig::OPERATION_TYPE_BUILDER;

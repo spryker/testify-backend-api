@@ -15,9 +15,6 @@ use Spryker\Shared\Kernel\Transfer\AbstractTransfer;
 
 class ArrayObjectOperationStrategy implements OperationStrategyInterface
 {
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return TestifyBackendApiConfig::OPERATION_TYPE_ARRAY_OBJECT;

@@ -28,10 +28,6 @@ class OperationSynchronizer implements OperationSynchronizerInterface
      */
     protected TestifyBackendApiToQueueFacadeInterface $queueFacade;
 
-    /**
-     * @param \Spryker\Glue\TestifyBackendApi\Dependency\Facade\TestifyBackendApiToEventBehaviourFacadeInterface $eventBehaviourFacade
-     * @param \Spryker\Glue\TestifyBackendApi\Dependency\Facade\TestifyBackendApiToQueueFacadeInterface $queueFacade
-     */
     public function __construct(
         TestifyBackendApiToEventBehaviourFacadeInterface $eventBehaviourFacade,
         TestifyBackendApiToQueueFacadeInterface $queueFacade
@@ -40,9 +36,6 @@ class OperationSynchronizer implements OperationSynchronizerInterface
         $this->queueFacade = $queueFacade;
     }
 
-    /**
-     * @return void
-     */
     public function synchronize(): void
     {
         $this->eventBehaviourFacade->triggerRuntimeEvents();

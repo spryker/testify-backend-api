@@ -15,9 +15,6 @@ use Spryker\Shared\Kernel\Transfer\AbstractTransfer;
 
 class TransferOperationStrategy implements OperationStrategyInterface
 {
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return TestifyBackendApiConfig::OPERATION_TYPE_TRANSFER;
@@ -42,11 +39,6 @@ class TransferOperationStrategy implements OperationStrategyInterface
         return $dataTransfer->fromArray($resolvedArguments, true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DynamicFixtureOperationTransfer $dynamicFixtureOperationTransfer
-     *
-     * @return string
-     */
     protected function getTransferName(DynamicFixtureOperationTransfer $dynamicFixtureOperationTransfer): string
     {
         return sprintf('\Generated\Shared\Transfer\%s', $dynamicFixtureOperationTransfer->getNameOrFail());

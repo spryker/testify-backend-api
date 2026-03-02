@@ -22,9 +22,6 @@ class TestifyBackendApiToEventBehaviourFacadeBridge implements TestifyBackendApi
         $this->eventBehaviourFacade = $eventBehaviourFacade;
     }
 
-    /**
-     * @return void
-     */
     public function triggerRuntimeEvents(): void
     {
          $this->eventBehaviourFacade->triggerRuntimeEvents();

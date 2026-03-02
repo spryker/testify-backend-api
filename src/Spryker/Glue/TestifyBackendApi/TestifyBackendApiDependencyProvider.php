@@ -33,11 +33,6 @@ class TestifyBackendApiDependencyProvider extends AbstractBundleDependencyProvid
      */
     public const ADAPTER_CODECEPTION = 'ADAPTER_CODECEPTION';
 
-    /**
-     * @param \Spryker\Glue\Kernel\Backend\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Backend\Container
-     */
     public function provideBackendDependencies(Container $container): Container
     {
         $container = parent::provideBackendDependencies($container);
@@ -48,11 +43,6 @@ class TestifyBackendApiDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Backend\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Backend\Container
-     */
     protected function addEventBehaviourFacade(Container $container): Container
     {
         $container->set(static::FACADE_EVENT_BEHAVIOR, function (Container $container) {
@@ -62,11 +52,6 @@ class TestifyBackendApiDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Backend\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Backend\Container
-     */
     protected function addQueueFacade(Container $container): Container
     {
         $container->set(static::FACADE_QUEUE, function (Container $container) {
@@ -76,11 +61,6 @@ class TestifyBackendApiDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Backend\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Backend\Container
-     */
     protected function addCodeceptionAdapter(Container $container): Container
     {
         $container->set(static::ADAPTER_CODECEPTION, function () {

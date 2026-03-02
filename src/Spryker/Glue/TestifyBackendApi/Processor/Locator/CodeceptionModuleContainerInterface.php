@@ -11,8 +11,5 @@ use Codeception\Lib\ModuleContainer;
 
 interface CodeceptionModuleContainerInterface
 {
-    /**
-     * @return \Codeception\Lib\ModuleContainer
-     */
     public function initModuleContainer(): ModuleContainer;
 }

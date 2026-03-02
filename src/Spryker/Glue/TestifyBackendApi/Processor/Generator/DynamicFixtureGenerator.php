@@ -36,12 +36,6 @@ class DynamicFixtureGenerator implements DynamicFixtureGeneratorInterface
      */
     protected DynamicFixtureResponseBuilderInterface $dynamicFixtureResponseBuilder;
 
-    /**
-     * @param \Spryker\Glue\TestifyBackendApi\Processor\Locator\CodeceptionModuleContainerInterface $codeceptionModuleContainer
-     * @param \Spryker\Glue\TestifyBackendApi\Processor\Resolver\OperationStrategyResolverInterface $operationStrategyResolver
-     * @param \Spryker\Glue\TestifyBackendApi\Processor\Runner\OperationPostRunnerInterface $operationPostRunner
-     * @param \Spryker\Glue\TestifyBackendApi\Processor\ResponseBuilder\DynamicFixtureResponseBuilderInterface $dynamicFixtureResponseBuilder
-     */
     public function __construct(
         CodeceptionModuleContainerInterface $codeceptionModuleContainer,
         OperationStrategyResolverInterface $operationStrategyResolver,
@@ -54,11 +48,6 @@ class DynamicFixtureGenerator implements DynamicFixtureGeneratorInterface
         $this->dynamicFixtureResponseBuilder = $dynamicFixtureResponseBuilder;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DynamicFixturesRequestBackendApiAttributesTransfer $dynamicFixturesRequestBackendApiAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueResponseTransfer
-     */
     public function generate(
         DynamicFixturesRequestBackendApiAttributesTransfer $dynamicFixturesRequestBackendApiAttributesTransfer
     ): GlueResponseTransfer {

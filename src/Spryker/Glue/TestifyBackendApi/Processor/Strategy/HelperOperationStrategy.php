@@ -16,9 +16,6 @@ use Spryker\Shared\Kernel\Transfer\AbstractTransfer;
 
 class HelperOperationStrategy implements OperationStrategyInterface
 {
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return TestifyBackendApiConfig::OPERATION_TYPE_HELPER;

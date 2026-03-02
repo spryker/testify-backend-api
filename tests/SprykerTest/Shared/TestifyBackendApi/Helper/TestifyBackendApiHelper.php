@@ -27,11 +27,6 @@ class TestifyBackendApiHelper extends Module
      */
     protected const SERVICE_REQUEST_STACK = 'request_stack';
 
-    /**
-     * @param \Codeception\TestInterface $test
-     *
-     * @return void
-     */
     public function _before(TestInterface $test): void
     {
         parent::_before($test);
@@ -39,9 +34,6 @@ class TestifyBackendApiHelper extends Module
         $this->getContainerHelper()->getContainer()->set(static::SERVICE_REQUEST_STACK, $this->createRequestStack());
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\RequestStack
-     */
     protected function createRequestStack(): RequestStack
     {
         $session = $this->createSession();
@@ -53,19 +45,11 @@ class TestifyBackendApiHelper extends Module
         return $stack;
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\Session\SessionInterface
-     */
     protected function createSession(): SessionInterface
     {
         return new Session(new MockArraySessionStorage());
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Session\SessionInterface $session
-     *
-     * @return \Symfony\Component\HttpFoundation\Request
-     */
     protected function createRequest(SessionInterface $session): Request
     {
         $request = Request::createFromGlobals();

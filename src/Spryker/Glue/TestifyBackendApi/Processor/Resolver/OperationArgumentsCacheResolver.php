@@ -58,11 +58,6 @@ class OperationArgumentsCacheResolver implements OperationArgumentsCacheResolver
         return $resolvedOperationArguments;
     }
 
-    /**
-     * @param mixed $argumentValue
-     *
-     * @return mixed
-     */
     protected function resolveArgument(mixed $argumentValue): mixed
     {
         if (is_array($argumentValue)) {
@@ -76,11 +71,6 @@ class OperationArgumentsCacheResolver implements OperationArgumentsCacheResolver
         return $argumentValue;
     }
 
-    /**
-     * @param string $argumentValue
-     *
-     * @return mixed
-     */
     protected function resolveCachedOperation(string $argumentValue): mixed
     {
         $sanitizedEntityArgument = str_replace(static::KEY_IDENTIFIER, '', $argumentValue);

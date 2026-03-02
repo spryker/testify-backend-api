@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\GlueResponseTransfer;
 
 interface DynamicFixtureGeneratorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\DynamicFixturesRequestBackendApiAttributesTransfer $dynamicFixturesRequestBackendApiAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueResponseTransfer
-     */
     public function generate(
         DynamicFixturesRequestBackendApiAttributesTransfer $dynamicFixturesRequestBackendApiAttributesTransfer
     ): GlueResponseTransfer;

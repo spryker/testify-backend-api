@@ -14,9 +14,6 @@ use Spryker\Shared\Kernel\Transfer\AbstractTransfer;
 
 interface OperationStrategyInterface
 {
-    /**
-     * @return string
-     */
     public function getType(): string;
 
     /**
