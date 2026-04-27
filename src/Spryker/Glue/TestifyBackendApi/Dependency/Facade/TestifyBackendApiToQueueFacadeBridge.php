@@ -25,14 +25,15 @@ class TestifyBackendApiToQueueFacadeBridge implements TestifyBackendApiToQueueFa
     }
 
     /**
-     * @param string $command
-     * @param \Symfony\Component\Console\Output\OutputInterface $output
      * @param array<string, mixed> $options
-     *
-     * @return void
      */
     public function startWorker(string $command, OutputInterface $output, array $options = []): void
     {
-         $this->queueFacade->startWorker($command, $output, $options);
+        $this->queueFacade->startWorker($command, $output, $options);
+    }
+
+    public function areQueuesEmpty(): bool
+    {
+        return $this->queueFacade->areQueuesEmpty();
     }
 }

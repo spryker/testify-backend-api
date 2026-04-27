@@ -10,7 +10,7 @@
         "spryker/glue-json-api-convention-extension": "^1.0.0",
         "spryker/kernel": "^3.73.0",
         "spryker/log": "^3.0.0",
-        "spryker/queue": "^1.0.0",
+        "spryker/queue": "^1.25.0",
         "spryker/symfony": "^3.0.0",
         "spryker/testify": "^3.0.0",
         "spryker/transfer": "^3.42.0"

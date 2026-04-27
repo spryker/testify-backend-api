@@ -18,14 +18,12 @@ class OperationSynchronizer implements OperationSynchronizerInterface
      */
     protected const QUEUE_RUNNER_COMMAND = APPLICATION_VENDOR_DIR . '/bin/console queue:task:start';
 
-    /**
-     * @var \Spryker\Glue\TestifyBackendApi\Dependency\Facade\TestifyBackendApiToEventBehaviourFacadeInterface $eventBehaviourFacade
-     */
+    protected const int MAX_QUEUE_MESSAGE_AVAILABILITY_CHECK_ATTEMPTS = 12;
+
+    protected const int QUEUE_MESSAGE_AVAILABILITY_CHECK_INTERVAL_MICROSECONDS = 500_000;
+
     protected TestifyBackendApiToEventBehaviourFacadeInterface $eventBehaviourFacade;
 
-    /**
-     * @var \Spryker\Glue\TestifyBackendApi\Dependency\Facade\TestifyBackendApiToQueueFacadeInterface $queueFacade
-     */
     protected TestifyBackendApiToQueueFacadeInterface $queueFacade;
 
     public function __construct(
@@ -39,6 +37,13 @@ class OperationSynchronizer implements OperationSynchronizerInterface
     public function synchronize(): void
     {
         $this->eventBehaviourFacade->triggerRuntimeEvents();
+
+        $attempt = 0;
+
+        do {
+            usleep(static::QUEUE_MESSAGE_AVAILABILITY_CHECK_INTERVAL_MICROSECONDS);
+        } while ($this->queueFacade->areQueuesEmpty() && $attempt++ < static::MAX_QUEUE_MESSAGE_AVAILABILITY_CHECK_ATTEMPTS);
+
         $this->queueFacade->startWorker(static::QUEUE_RUNNER_COMMAND, new NullOutput(), ['stop_when_empty' => true]);
     }
 }

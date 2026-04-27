@@ -12,11 +12,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 interface TestifyBackendApiToQueueFacadeInterface
 {
     /**
-     * @param string $command
-     * @param \Symfony\Component\Console\Output\OutputInterface $output
      * @param array<string, mixed> $options
-     *
-     * @return void
      */
     public function startWorker(string $command, OutputInterface $output, array $options = []): void;
+
+    public function areQueuesEmpty(): bool;
 }
